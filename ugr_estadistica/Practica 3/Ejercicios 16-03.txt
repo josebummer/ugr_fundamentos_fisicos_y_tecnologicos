@@ -1,0 +1,24 @@
+Estadisticos --> tabla de contingencia --> tabla de doble entrada, cojimos red y sexo
+
+diagrama de barras:
+	tabla <- table(Respuestas$Red, Respuestas$Sexo)
+	barplot(tabla)
+	barplot(tabla, legend.text = c("Facebook", "Otra", "Tuenti", "Twitter"))
+	barplot(tabla, beside = TRUE)
+	barplot(tabla, beside = TRUE, col = c("green", "red", "blue", "yellow"))
+	barplot(tabla, beside = TRUE, col = c("green", "red", "blue", "yellow"), horiz = TRUE)
+
+
+
+estadisticos --> resumenes --> tabla de estadiscticas, elegimos red y edad y analizamos la media
+graficas --> graficas de las medias
+
+covarianzas:
+
+variable <- cbind(Respuestas$Altura, Respuestas$Peso, Respuestas$Edad)
+cov(variable)
+	Los elementos de las diagonales son las varianzas y los otros son las covarianzas
+
+correlacion lineal:
+cor(variable)
+graficas --> matriz de diagrama de dispersion

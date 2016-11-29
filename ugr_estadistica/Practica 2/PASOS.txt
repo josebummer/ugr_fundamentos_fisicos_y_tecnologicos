@@ -1,0 +1,82 @@
+pestaña datos para cargar los datos.
+
+una vez cargados, pestaña estadisticos --> resumenes --> resumenes numericos, para hacer medias.. etc con los datos.
+
+para calcular la varianza tiene que ser por codigo --> var(Respuestas$Altura) donde respuestas es el nombre del conjunto
+de datos, y respuesta es el nombre del campo que queremos calcular.
+
+Variable cualitativa --> Estadistica --> distribucion de frecuencias
+
+
+GRAFICAS:
+
+graficas --> histogramas
+
+graficas --> diagrama de cajas
+
+graficas --> graficos de tallos y hojas
+
+Editar graficas --> Boxplot(Altura~Sexo, data=Respuestas, id.method="y", col = c("red", "green"),horiz = TRUE, border = "blue")
+
+
+EJERCICIOS:
+
+- 20% del numero de alumnos que mas pesan --> Percentil 80
+
+
+EJECUCIONES:
+
+
+Respuestas <- 
+  readXL("C:/Users/Jose/Google Drive/Universidad/SEGUNDO CUATRIMESTRE/Estadistica/Practicas/Practica 2/respuestas.xls",
+   rownames=FALSE, header=TRUE, na="", sheet="Respuestas", stringsAsFactors=TRUE)
+library(relimp, pos=14)
+showData(Respuestas, placement='-20+200', font=getRcmdr('logFont'), maxwidth=80, maxheight=30)
+library(abind, pos=15)
+library(e1071, pos=16)
+numSummary(Respuestas[,"Altura"], statistics=c("mean", "sd", "IQR", "quantiles", "cv"), 
+  quantiles=c(0,.25,.5,.75,.8,.1,1))
+var(Respuestas$Altura)
+numSummary(Respuestas[,"Altura"], statistics=c("mean", "sd", "IQR", "quantiles", "cv", 
+  "skewness"), quantiles=c(0,.25,.5,.75,.8,.1,1), type="2")
+numSummary(Respuestas[,"Altura"], statistics=c("mean", "sd", "IQR", "quantiles", "cv", 
+  "skewness", "kurtosis"), quantiles=c(0,.25,.5,.75,.8,.1,1), type="2")
+numSummary(Respuestas[,"Altura"], statistics=c("mean", "sd", "IQR", "quantiles", "cv", 
+  "skewness", "kurtosis"), quantiles=c(0,.25,.5,.75,.8,.1,1), type="1")
+local({
+  .Table <- with(Respuestas, table(I_1opcion))
+  cat("\ncounts:\n")
+  print(.Table)
+  cat("\npercentages:\n")
+  print(round(100*.Table/sum(.Table), 2))
+})
+local({
+  .Table <- with(Respuestas, table(Plataf))
+  cat("\ncounts:\n")
+  print(.Table)
+  cat("\npercentages:\n")
+  print(round(100*.Table/sum(.Table), 2))
+})
+local({
+  .Table <- with(Respuestas, table(Sexo))
+  cat("\ncounts:\n")
+  print(.Table)
+  cat("\npercentages:\n")
+  print(round(100*.Table/sum(.Table), 2))
+})
+with(Respuestas, Hist(Altura, scale="frequency", breaks="Sturges", col="darkgray", 
+  xlab="Alturas", ylab="Frecuencias", main="Histigrama"))
+editDataset(Respuestas)
+Boxplot( ~ Altura, data=Respuestas, id.method="y")
+showData(Respuestas, placement='-20+200', font=getRcmdr('logFont'), maxwidth=80, maxheight=30)
+numSummary(Respuestas[,"Altura"], groups=Respuestas$Sexo, statistics=c("mean", "sd", "IQR", 
+  "quantiles", "cv", "skewness", "kurtosis"), quantiles=c(0,.25,.5,.75,.8,.1,1), type="1")
+with(Respuestas, Hist(Altura, groups=Sexo, scale="frequency", breaks="Sturges", col="darkgray",
+   xlab="Alturas", ylab="Frecuencias", main="Histigrama"))
+Boxplot(Altura~Sexo, data=Respuestas, id.method="y", col = c("red", "green"),horiz = TRUE, border = "blue")
+library(tcltk, pos=17)
+library(aplpack, pos=17)
+with(Respuestas, stem.leaf(Altura, style="bare", na.rm=TRUE))
+numSummary(Respuestas[,"Peso"], groups=Respuestas$Sexo, statistics=c("quantiles", "skewness"), 
+  quantiles=c(.8), type="1")
+numSummary(Respuestas[,"Peso"], statistics=c("quantiles"), quantiles=c(.8))

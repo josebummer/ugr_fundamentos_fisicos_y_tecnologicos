@@ -1,0 +1,12 @@
+graficas --> diagramas de dispersion			Elegimos altura y peso y en opciones marcamos cajas de dispersion lineales
+
+
+estadisticos --> ajustes de modelos --> regresion lineal		Elegimos peso y altura
+
+
+para ver el peso una vez hallada la recta (ej:173cm):
+peso_estimado <- -66.0046 + 0.7915 * 173
+peso_estimado
+
+
+estadisticos --> ajustes de modelos --> modelo lineal
