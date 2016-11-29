@@ -1,0 +1,2 @@
+# ugr_fundamentos_fisicos_y_tecnologicos
+Practicas FFT
