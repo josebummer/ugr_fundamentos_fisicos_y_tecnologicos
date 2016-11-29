@@ -1,0 +1,9 @@
+estadisticos -- medias -- test t para una muestra
+
+
+
+estadisticos -- proporciones -- test
+
+estadisticos -- medias -- test t para una muestras independientes
+
+estadisticos -- varianzas --test f para dos varianzas

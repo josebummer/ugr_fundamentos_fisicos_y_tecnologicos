@@ -1,0 +1,13 @@
+distribuciones --> discretas --> binomial --> grafica de funcion de probabilidad
+
+distribuciones --> discretas --> binomial --> probabilidades binomiales (Funcion de masa probabilidad)
+
+distribuciones --> discretas --> binomial --> probabilidades binomiales acumuladas (Funcion distribucion)
+
+distribuciones --> discretas --> binomial --> cuantiles
+
+distribuciones --> discretas --> binomial --> muestras de una distribucion binomail
+
+
+distribuciones --> discretas --> Poisson --> 
+
