@@ -1,5 +1,0 @@
-distribuciones --> distribucion continuas --> distribucion normal --> graficas
-
-distribuciones --> distribucion continuas --> distribucion normal --> prbabilidades
-
-distribuciones --> distribucion continuas --> distribucion normal --> muestras
