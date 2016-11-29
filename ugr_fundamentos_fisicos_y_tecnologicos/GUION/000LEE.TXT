@@ -1,0 +1,9 @@
+El guión de prácticas se hizo en WordPerfect-5 (pr_fft6.wp)
+Se ha transformado en PDF (pr_fft6.pdf)
+
+No doy versiones en Word, ni en RTF, puesto que ocupan mucho
+y daban algunos problemas con los tipos de letra.
+El de Wordperfect-5, puede ser importado por MS-Word (p.ej. para
+tener el texto o imágenes del guión de prácticas).
+
+FFT--- granada.net78.net ---------------------------------2015-2016
